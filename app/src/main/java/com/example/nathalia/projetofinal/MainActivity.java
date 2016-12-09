@@ -1,5 +1,6 @@
 package com.example.nathalia.projetofinal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -78,7 +79,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_add) {
-            // Handle the camera action
+            Intent it = new Intent(this,AdicionarActivity.class);
+            startActivityForResult(it, 0);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

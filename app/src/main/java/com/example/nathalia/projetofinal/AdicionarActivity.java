@@ -14,13 +14,14 @@ public class AdicionarActivity extends AppCompatActivity implements View.OnClick
     private Spinner spnRaca, spnClasse;
     private Button btnAdd;
     private ArrayAdapter<String> adpClasse, adpRaca;
-    private Controller ctrl = new Controller(this);
+    private Controller ctrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar);
 
+        ctrl = new Controller(this);
 
         editNome = (EditText)findViewById(R.id.editNome);
         spnRaca = (Spinner)findViewById(R.id.spnRaca);

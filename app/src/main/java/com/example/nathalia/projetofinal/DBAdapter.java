@@ -2,12 +2,17 @@ package com.example.nathalia.projetofinal;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
 import java.util.ArrayList;
 
 
 public class DBAdapter {
+    private SQLiteDatabase db;
 
     public DBAdapter(Context ctx){
+        DataBase auxdb = new DataBase(ctx);
+        db = auxdb.getWritableDatabase();
     }
 
     public void addPerson(ArrayList<String> dados){
@@ -21,7 +26,7 @@ public class DBAdapter {
         data.put("nome", person.getNome());
         data.put("classe", person.getClasse());
         data.put("raca", person.getRaca());
-        //db.insert("Fichas",null,data);
+        db.insert("Fichas",null,data);
     }
 
 

@@ -52,13 +52,13 @@
     <Spinner
         android:layout_width="match_parent"
         android:id="@+id/spnRaca"
-        android:layout_height="50sp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/addRaca"
         android:layout_alignParentStart="true" />
 
     <Spinner
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/addClasse"
         android:layout_alignParentStart="true"
         android:id="@+id/spnClasse" />
