@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:id="@+id/imagePerson" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/personNome"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imagePerson"
+        android:textSize="18sp"
+        android:paddingTop="5sp"
+        android:paddingLeft="5sp" />
+
+    <TextView
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imagePerson"
+        android:layout_toEndOf="@+id/imagePerson"
+        android:id="@+id/personRaca"
+        android:paddingBottom="5sp"
+        android:paddingLeft="5sp" />
+
+    <TextView
+        android:text="|"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textsep"
+        android:layout_alignBaseline="@+id/personRaca"
+        android:layout_alignBottom="@+id/personRaca"
+        android:layout_toEndOf="@+id/personRaca" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/personClasse"
+        android:paddingBottom="5sp"
+        android:layout_alignBaseline="@+id/textsep"
+        android:layout_alignBottom="@+id/textsep"
+        android:layout_toEndOf="@+id/textsep"
+        android:layout_marginStart="10dp" />
+</RelativeLayout>

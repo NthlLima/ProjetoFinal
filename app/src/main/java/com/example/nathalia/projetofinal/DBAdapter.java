@@ -2,7 +2,9 @@ package com.example.nathalia.projetofinal;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
@@ -21,14 +23,58 @@ public class DBAdapter {
         // ArrayList
         person.setNome(dados.get(0));
         person.setClasse(dados.get(1));
+        String c = dados.get(1);
         person.setRaca(dados.get(2));
         // Data
         data.put("nome", person.getNome());
         data.put("classe", person.getClasse());
         data.put("raca", person.getRaca());
-        db.insert("Fichas",null,data);
+        db.insert("Personagens",null,data);
     }
 
 
+    public PersonAdapter loadLista(Context context){
+        PersonAdapter adaptador = new PersonAdapter(context,new ArrayList<Personagem>());
+        Cursor c = load();
+        if(c.getCount() > 0){
+            c.moveToFirst();
+            do{
+                Personagem p = new Personagem();
+                p.setId(c.getLong(0));
+                p.setNome(c.getString(1));
+                p.setClasse(c.getString(2));
+                p.setRaca(c.getString(3));
+                adaptador.add(p);
+            }while(c.moveToNext());
+        };
+        return adaptador;
+    }
+
+    public Personagem loadPerson(String nome){
+        Personagem p = new Personagem();
+        Cursor c = load();
+        if(c.getCount() > 0){
+            c.moveToFirst();
+            do{
+                p.setId(c.getLong(0));
+                p.setNome(c.getString(1));
+                p.setClasse(c.getString(2));
+                p.setRaca(c.getString(3));
+                String n = p.getNome();
+                if((n).equals(nome)){
+                    break;
+                }
+            }while(c.moveToNext());
+        };
+        return p;
+    }
+
+
+
+
+    public Cursor load() {
+        final Cursor c = db.query("Personagens",null,null,null,null,null,null);
+        return c;
+    }
 
 }

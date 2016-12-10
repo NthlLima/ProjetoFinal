@@ -2,9 +2,7 @@ package com.example.nathalia.projetofinal;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.view.*;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,9 +11,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.database.SQLException;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,AdapterView.OnItemClickListener {
+
+
+    private ListView listPerson;
+    private PersonAdapter personAdp;
+    private Controller ctrl;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +42,41 @@ public class MainActivity extends AppCompatActivity
 
 
         // MINHAS ALTERAÇÕES
+        ctrl = new Controller(this);
+        listPerson = (ListView)findViewById(R.id.listPerson);
 
+        try{
+            personAdp = ctrl.buscarLista(this);
+            listPerson.setAdapter(personAdp);
+        }catch(SQLException ex){
 
-
+        }
+        listPerson.setOnItemClickListener(this);
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        personAdp = ctrl.buscarLista(this);
+        listPerson.setAdapter(personAdp);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String p;
+        int itemPosition = position;
+         p = personAdp.getPosition(itemPosition);
+        if(p != null){
+            Bundle b = new Bundle();
+            Intent it = new Intent(this,exibirActivity.class);
+            it.putExtras(b);
+            it.putExtra("nome",p);
+            startActivityForResult(it,0);
+        }
+    }
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -57,7 +95,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -70,7 +108,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -81,8 +119,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_add) {
             Intent it = new Intent(this,AdicionarActivity.class);
             startActivityForResult(it, 0);
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_exit) {
+            finish();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

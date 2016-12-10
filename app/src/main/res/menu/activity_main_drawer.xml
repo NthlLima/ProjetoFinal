@@ -4,12 +4,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_add"
-            android:icon="@mipmap/ic_user"
+            android:icon="@mipmap/ic_addnew"
             android:title="Novo" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_exit"
+            android:icon="@mipmap/ic_exit"
+            android:title="Sair" />
     </group>
 
     <item android:title="Communicate">

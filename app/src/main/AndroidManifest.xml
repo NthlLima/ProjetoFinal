@@ -18,9 +18,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdicionarActivity"
-                  android:label="Adicionar Novo Personagem">
-    </activity>
+        <activity
+            android:name=".AdicionarActivity"
+            android:label="Adicionar Novo Personagem"></activity>
+        <activity
+            android:name=".exibirActivity"
+            android:label="@string/title_activity_exibir"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.nathalia.projetofinal.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

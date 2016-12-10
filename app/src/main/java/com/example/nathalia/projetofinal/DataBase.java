@@ -4,10 +4,11 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+
 public class DataBase extends SQLiteOpenHelper {
 
     private static final String NOME_DB = "Personagens";
-    private static final int VERSAO_DB = 1;
+    private static final int VERSAO_DB = 7;
 
     public DataBase(Context ctx){
         super(ctx,NOME_DB,null,VERSAO_DB);
