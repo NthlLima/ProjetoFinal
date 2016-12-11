@@ -33,6 +33,22 @@ public class DBAdapter {
     }
 
 
+    public  void editPerson(Personagem p){
+        ContentValues data = new ContentValues();
+        data.put("nome", p.getNome());
+        data.put("classe", p.getClasse());
+        data.put("raca", p.getRaca());
+        long id = p.getId();
+        String _id = String.valueOf(id);
+        db.update("Personagens", data, "_id=?",new String[]{_id});
+    }
+
+
+    public void excluirPerson(Personagem p){
+        db.delete("Personagens", "_id = "+p.getId(), null);
+    }
+
+
     public PersonAdapter loadLista(Context context){
         PersonAdapter adaptador = new PersonAdapter(context,new ArrayList<Personagem>());
         Cursor c = load();

@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".AdicionarActivity"
-            android:label="Adicionar Novo Personagem"></activity>
+            android:label="Adicionar Novo Personagem" />
         <activity
             android:name=".exibirActivity"
             android:label="@string/title_activity_exibir"
@@ -30,6 +30,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.nathalia.projetofinal.MainActivity" />
         </activity>
+        <activity
+            android:name=".EditActivity"
+            android:label="@string/title_activity_edit"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

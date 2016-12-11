@@ -2,12 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_exibir"
+    android:id="@+id/content_edit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.nathalia.projetofinal.exibirActivity"
-    tools:showIn="@layout/activity_exibir"
+    tools:context="com.example.nathalia.projetofinal.EditActivity"
+    tools:showIn="@layout/activity_edit"
     android:background="@color/colorPrimary">
 
     <ImageView
@@ -16,18 +16,8 @@
         android:layout_alignParentStart="true"
         android:id="@+id/imgHeader"
         android:layout_width="150sp"
-        android:layout_height="150sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:id="@+id/nomePerson"
-        android:textSize="20sp"
-        android:textColor="@color/colorAccent"
-        android:layout_alignBottom="@+id/imgHeader"
-        android:layout_centerHorizontal="true"
-        android:textStyle="normal|bold" />
+        android:layout_height="150sp"
+        app:srcCompat="@drawable/headeno" />
 
     <TextView
         android:text="Classe:"
@@ -40,35 +30,39 @@
         android:textColor="@color/colorAccent"
         android:textSize="16sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textClasse"
-        android:layout_toEndOf="@+id/textClasse"
-        android:id="@+id/classePerson"
-        android:textColor="@color/colorAccent"
-        android:paddingLeft="5sp"
-        android:textSize="16sp" />
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editNome"
+        android:textSize="20sp"
+        android:textColor="?android:attr/colorControlActivated"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="135sp"
+        android:layout_marginTop="55sp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textClasse"
+        android:layout_alignStart="@+id/textClasse"
+        android:id="@+id/editClasse"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16sp" />
 
     <TextView
         android:text="Raça:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textClasse"
-        android:layout_alignStart="@+id/textClasse"
         android:id="@+id/textRaca"
         android:textSize="16sp"
         android:textColor="@color/colorAccent"
-        android:paddingTop="10sp" />
+        android:paddingTop="10sp"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/editClasse"
+        android:layout_alignStart="@+id/editClasse" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textRaca"
-        android:layout_toEndOf="@+id/textRaca"
-        android:id="@+id/racaPerson"
-        android:textSize="16sp"
-        android:textColor="@color/colorAccent"
-        android:paddingLeft="5sp" />
 
 </RelativeLayout>

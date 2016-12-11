@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.nathalia.projetofinal.exibirActivity">
+    tools:context="com.example.nathalia.projetofinal.EditActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -17,41 +17,24 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/barnew"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="Personagem"
-            app:titleTextColor="@android:color/transparent" />
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:clickable="true"
-        app:fabSize="mini"
-        app:srcCompat="@mipmap/ic_erase"
-        android:id="@+id/fabExcluir"
-        app:layout_anchor="@+id/include"
-        android:layout_gravity="top|left"
-        app:layout_anchorGravity="bottom|right"
-        android:layout_marginBottom="20sp"
-        android:layout_marginRight="20sp"
-        android:tint="#ffffff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <include layout="@layout/content_edit"
+        android:id="@+id/include2" />
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         app:fabSize="mini"
-        app:srcCompat="@mipmap/ic_edit"
-        app:layout_anchor="@+id/include"
+        app:srcCompat="@android:drawable/ic_menu_upload"
+        android:id="@+id/fabSalvar"
+        app:layout_anchor="@+id/include2"
         app:layout_anchorGravity="bottom|right"
         android:layout_gravity="top|left"
-        android:id="@+id/fabEditar"
-        android:tint="#ffffff"
         android:layout_marginBottom="20sp"
-        android:layout_marginRight="70sp" />
-
-    <include layout="@layout/content_exibir"
-        android:id="@+id/include" />
+        android:layout_marginRight="20sp" />
 
 </android.support.design.widget.CoordinatorLayout>

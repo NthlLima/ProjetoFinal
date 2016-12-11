@@ -2,7 +2,6 @@ package com.example.nathalia.projetofinal;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -36,7 +35,7 @@ public class AdicionarActivity extends AppCompatActivity implements View.OnClick
         adpRaca.add("Dríade");
         spnRaca.setAdapter(adpRaca);
 
-        spnClasse = (Spinner)findViewById(R.id.spnClasse);
+        spnClasse = (Spinner)findViewById(R.id.editClasse);
         adpClasse = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
         adpClasse.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adpClasse.add("Guerreiro");

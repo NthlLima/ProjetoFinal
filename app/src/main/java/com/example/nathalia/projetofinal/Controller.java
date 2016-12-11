@@ -21,7 +21,6 @@ public class Controller {
     }
 
 
-
     public ArrayList<String> buscarPersonagem(String nome){
         ArrayList<String> dados = new ArrayList<>();
         Personagem p = dbAdp.loadPerson(nome);
@@ -29,6 +28,21 @@ public class Controller {
         dados.add(p.getClasse());
         dados.add(p.getRaca());
         return dados;
+    }
+
+    public  void editPerson (String nome,ArrayList<String> newdados ){
+        Personagem p = dbAdp.loadPerson(nome);
+        if(p.getId() != 0){
+            p.setNome(newdados.get(0));
+            this.dbAdp.editPerson(p);
+
+        }
+    }
+
+    public void excluirPerson (String nome){
+        Personagem p = dbAdp.loadPerson(nome);
+        this.dbAdp.excluirPerson(p);
+
     }
 
 }

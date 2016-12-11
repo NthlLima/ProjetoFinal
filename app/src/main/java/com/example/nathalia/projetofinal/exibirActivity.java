@@ -19,7 +19,9 @@ public class exibirActivity extends AppCompatActivity implements View.OnClickLis
     private ArrayList<String> dados;
     private TextView nomePerson, classePerson, racaPerson;
     private ImageView img;
-    private ImageButton btnExcluir;
+    private FloatingActionButton fabEditar;
+    private FloatingActionButton fabExcluir;
+    private String nome;
 
 
     @Override
@@ -30,12 +32,14 @@ public class exibirActivity extends AppCompatActivity implements View.OnClickLis
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         ctrl = new Controller(this);
         nomePerson = (TextView)findViewById(R.id.nomePerson);
         classePerson = (TextView)findViewById(R.id.classePerson);
         racaPerson = (TextView)findViewById(R.id.racaPerson);
         img = (ImageView)findViewById(R.id.imgHeader);
-        btnExcluir = (ImageButton)findViewById(R.id.btnExcluir);
+        fabExcluir = (FloatingActionButton)findViewById(R.id.fabExcluir);
+        fabEditar = (FloatingActionButton)findViewById(R.id.fabEditar);
 
         Intent intent = getIntent();
         if(intent != null){
@@ -48,6 +52,7 @@ public class exibirActivity extends AppCompatActivity implements View.OnClickLis
                 classePerson.setText(""+dados.get(1));
                 racaPerson.setText(""+dados.get(2));
 
+                nome = dados.get(0);
                 c = dados.get(1);
                 if(("Mago").equals(c)){
                     img.setImageResource(R.drawable.heademage);
@@ -62,14 +67,25 @@ public class exibirActivity extends AppCompatActivity implements View.OnClickLis
 
             } // if(b!= null) acaba aqui
         }
-        btnExcluir.setOnClickListener(this);
+
+        fabExcluir.setOnClickListener(this);
+        fabEditar.setOnClickListener(this);
     }
 
 
     public void onClick(View v) {
-        if(v == btnExcluir) {
-           // excluir();
+        if(v == fabExcluir){
+           ctrl.excluirPerson(nome);
             finish();
+        }
+        if(v == fabEditar){
+            Bundle b = new Bundle();
+            Intent it = new Intent(this,EditActivity.class);
+            it.putExtras(b);
+            it.putExtra("nome",dados.get(0));
+            it.putExtra("classe", dados.get(1));
+            it.putExtra("raca", dados.get(2));
+            startActivityForResult(it,0);
         }
     }
 

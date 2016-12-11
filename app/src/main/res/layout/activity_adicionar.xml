@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/addClasse"
         android:layout_alignParentStart="true"
-        android:id="@+id/spnClasse" />
+        android:id="@+id/editClasse" />
 
     <Button
         android:text="Adicionar"
