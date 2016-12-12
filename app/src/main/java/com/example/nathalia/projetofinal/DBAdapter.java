@@ -17,34 +17,63 @@ public class DBAdapter {
         db = auxdb.getWritableDatabase();
     }
 
-    public void addPerson(ArrayList<String> dados){
+    public void addPerson(ArrayList<String> dados, ArrayList<Integer> dadosint){
         ContentValues data = new ContentValues();
         Personagem person = new Personagem();
         // ArrayList
         person.setNome(dados.get(0));
         person.setClasse(dados.get(1));
-        String c = dados.get(1);
+        person.setPosClasse(dadosint.get(0));
         person.setRaca(dados.get(2));
+        person.setPosRaca(dadosint.get(1));
+        person.setForc(dadosint.get(2));
+        person.setDes(dadosint.get(3));
+        person.setCos(dadosint.get(4));
+        person.setInte(dadosint.get(5));
+        person.setSab(dadosint.get(6));
+        person.setCar(dadosint.get(7));
         // Data
         data.put("nome", person.getNome());
         data.put("classe", person.getClasse());
+        data.put("posclasse", person.getPosClasse());
         data.put("raca", person.getRaca());
+        data.put("posraca", person.getPosRaca());
+        data.put("forca", person.getForc());
+        data.put("des", person.getDes());
+        data.put("cos", person.getCos());
+        data.put("inte", person.getInte());
+        data.put("sab", person.getSab());
+        data.put("car", person.getCar());
         db.insert("Personagens",null,data);
     }
 
 
-    public  void editPerson(Personagem p){
+    public  void editPerson(String nome, ArrayList<String> newdados, ArrayList<Integer> newpos){
         ContentValues data = new ContentValues();
-        data.put("nome", p.getNome());
-        data.put("classe", p.getClasse());
-        data.put("raca", p.getRaca());
-        long id = p.getId();
-        String _id = String.valueOf(id);
-        db.update("Personagens", data, "_id=?",new String[]{_id});
+        Personagem p = this.loadPerson(nome);
+        if(p.getId() != 0) {
+            // ArrayList
+            p.setNome(newdados.get(0));
+            p.setClasse(newdados.get(1));
+            p.setPosClasse(newpos.get(0));
+            p.setRaca(newdados.get(2));
+            p.setPosRaca(newpos.get(1));
+
+            //Data
+            data.put("nome", p.getNome());
+            data.put("classe", p.getClasse());
+            data.put("posclasse", p.getPosClasse());
+            data.put("raca", p.getRaca());
+            data.put("posraca", p.getPosRaca());
+            long id = p.getId();
+            String _id = String.valueOf(id);
+            db.update("Personagens", data, "_id=?", new String[]{_id});
+        }
     }
 
 
-    public void excluirPerson(Personagem p){
+    public void excluirPerson(String nome){
+        Personagem p = this.loadPerson(nome);
         db.delete("Personagens", "_id = "+p.getId(), null);
     }
 
@@ -59,7 +88,15 @@ public class DBAdapter {
                 p.setId(c.getLong(0));
                 p.setNome(c.getString(1));
                 p.setClasse(c.getString(2));
-                p.setRaca(c.getString(3));
+                p.setPosClasse(c.getInt(3));
+                p.setRaca(c.getString(4));
+                p.setPosRaca(c.getInt(5));
+                p.setForc(c.getInt(6));
+                p.setDes(c.getInt(7));
+                p.setCos(c.getInt(8));
+                p.setInte(c.getInt(9));
+                p.setSab(c.getInt(10));
+                p.setCar(c.getInt(11));
                 adaptador.add(p);
             }while(c.moveToNext());
         };
@@ -75,7 +112,15 @@ public class DBAdapter {
                 p.setId(c.getLong(0));
                 p.setNome(c.getString(1));
                 p.setClasse(c.getString(2));
-                p.setRaca(c.getString(3));
+                p.setPosClasse(c.getInt(3));
+                p.setRaca(c.getString(4));
+                p.setPosRaca(c.getInt(5));
+                p.setForc(c.getInt(6));
+                p.setDes(c.getInt(7));
+                p.setCos(c.getInt(8));
+                p.setInte(c.getInt(9));
+                p.setSab(c.getInt(10));
+                p.setCar(c.getInt(11));
                 String n = p.getNome();
                 if((n).equals(nome)){
                     break;

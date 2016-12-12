@@ -8,4 +8,8 @@
     <string name="title_activity_exibir">exibirActivity</string>
     <string name="title_activity_test">testActivity</string>
     <string name="title_activity_edit">EditActivity</string>
+    <string name="right" />
+    <string name="left" />
+    <string name="mod_habilidade" />
+    <string name="habilidades" />
 </resources>

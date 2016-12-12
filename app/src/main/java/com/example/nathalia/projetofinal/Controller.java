@@ -1,19 +1,31 @@
 package com.example.nathalia.projetofinal;
 
 import android.content.Context;
+import android.widget.ArrayAdapter;
+
 import java.util.ArrayList;
 
 
 public class Controller {
     private DBAdapter dbAdp;
-    private PersonAdapter personAdp;
+    private Adaptadores adp;
 
     public Controller(Context ctx){
         dbAdp = new DBAdapter(ctx);
+        adp = new Adaptadores(ctx);
     }
 
-    public void salvar(ArrayList<String> dados){
-       dbAdp.addPerson(dados);
+
+    public ArrayAdapter<String> setClasses(Context ctx){
+        return adp.setClasses(ctx);
+    }
+
+    public ArrayAdapter<String> setRacas(Context ctx){
+        return adp.setRacas(ctx);
+    }
+
+    public void salvar(ArrayList<String> dados, ArrayList<Integer> dadosint){
+       dbAdp.addPerson(dados,dadosint);
     }
 
     public PersonAdapter buscarLista(Context context){
@@ -30,19 +42,34 @@ public class Controller {
         return dados;
     }
 
-    public  void editPerson (String nome,ArrayList<String> newdados ){
+    public ArrayList<Integer> buscarInt(String nome){
+        ArrayList<Integer> inteiros = new ArrayList<>();
         Personagem p = dbAdp.loadPerson(nome);
-        if(p.getId() != 0){
-            p.setNome(newdados.get(0));
-            this.dbAdp.editPerson(p);
+        inteiros.add(p.getPosClasse());
+        inteiros.add(p.getPosRaca());
+        inteiros.add(p.getForc());
+        inteiros.add(p.getDes());
+        inteiros.add(p.getCos());
+        inteiros.add(p.getInte());
+        inteiros.add(p.getSab());
+        inteiros.add(p.getCar());
+        return inteiros;
+    }
 
-        }
+    public  void editPerson (String nome,ArrayList<String> newdados, ArrayList<Integer> newpos ){
+        dbAdp.editPerson(nome,newdados,newpos);
     }
 
     public void excluirPerson (String nome){
-        Personagem p = dbAdp.loadPerson(nome);
-        this.dbAdp.excluirPerson(p);
+        this.dbAdp.excluirPerson(nome);
 
+    }
+
+
+    public int imgHeader(int p){
+
+        int imgs[] = adp.setImg;
+        return imgs[p];
     }
 
 }

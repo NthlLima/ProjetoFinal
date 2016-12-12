@@ -31,19 +31,8 @@ public class PersonAdapter extends ArrayAdapter<Personagem> {
         raca.setText(p.getRaca());
         classe.setText(p.getClasse());
 
-        String c = p.getClasse();
-        if(("Mago").equals(c)){
-            img.setImageResource(R.drawable.mage);
-        } else if(("Guerreiro").equals(c)){
-            img.setImageResource(R.drawable.warrior);
-        } else if(("Bárbaro").equals(c)){
-            img.setImageResource(R.drawable.barbarian);
-        } else if(("Ranger").equals(c)){
-            img.setImageResource(R.drawable.ranger);
-        } else
-            img.setImageResource(R.drawable.unknown);
-
-
+        int pos = p.getPosClasse();
+        img.setImageResource(setIcon[pos]);
         return convertView;
     }
 
@@ -54,4 +43,11 @@ public class PersonAdapter extends ArrayAdapter<Personagem> {
         person = p.getNome();
         return person;
     }
+
+    private int[] setIcon = new int[]{
+            R.drawable.warrior,
+            R.drawable.barbarian,
+            R.drawable.mage,
+            R.drawable.ranger
+    };
 }

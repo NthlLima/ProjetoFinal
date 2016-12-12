@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/barnew"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="Editar" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -29,12 +30,13 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         app:fabSize="mini"
-        app:srcCompat="@android:drawable/ic_menu_upload"
+        app:srcCompat="@mipmap/ic_yes"
         android:id="@+id/fabSalvar"
         app:layout_anchor="@+id/include2"
         app:layout_anchorGravity="bottom|right"
         android:layout_gravity="top|left"
         android:layout_marginBottom="20sp"
-        android:layout_marginRight="20sp" />
+        android:layout_marginRight="20sp"
+        android:tint="#ffffff" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -64,5 +64,13 @@
         android:layout_below="@+id/editClasse"
         android:layout_alignStart="@+id/editClasse" />
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/textRaca"
+        android:id="@+id/editRaca"
+        android:layout_marginRight="16sp" />
+
 
 </RelativeLayout>

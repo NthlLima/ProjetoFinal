@@ -10,66 +10,416 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.nathalia.projetofinal.AdicionarActivity">
 
-    <TextView
-        android:text="Nome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/addNome"
-        android:textSize="18sp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_below="@+id/addNome"
-        android:layout_alignParentStart="true"
-        android:id="@+id/editNome"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="Classe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spnRaca"
-        android:layout_marginTop="10dp"
-        android:id="@+id/addClasse"
-        android:textSize="18sp"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Raça"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/addRaca"
-        android:textSize="18sp"
-        android:layout_below="@+id/editNome"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp" />
-
-    <Spinner
+    <ScrollView
         android:layout_width="match_parent"
-        android:id="@+id/spnRaca"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/addRaca"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent">
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/addClasse"
-        android:layout_alignParentStart="true"
-        android:id="@+id/editClasse" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:text="Adicionar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnAdd"
-        android:backgroundTint="@color/colorAccent"
-        android:textColor="@android:color/background_light"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+            <TextView
+                android:text="Nome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/addNome"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:layout_below="@+id/addNome"
+                android:layout_alignParentStart="true"
+                android:id="@+id/editNome"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:text="Classe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spnRaca"
+                android:layout_marginTop="10dp"
+                android:id="@+id/addClasse"
+                android:textSize="18sp"
+                android:layout_alignParentStart="true" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editClasse"
+                android:layout_below="@+id/addClasse"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:text="Raça"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addRaca"
+                android:textSize="18sp"
+                android:layout_below="@+id/editNome"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="11dp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:id="@+id/spnRaca"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addRaca"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Habilidades"
+                android:id="@+id/textHab"
+                android:textStyle="bold"
+                android:layout_below="@+id/editClasse"
+                android:layout_alignStart="@+id/textCAR"
+                android:layout_marginTop="31dp" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numTotalM"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:paddingLeft="5dp"
+                android:layout_alignBottom="@+id/textHab"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Mod.Habilidade"
+                android:id="@+id/textMod"
+                android:layout_above="@+id/numModF"
+                android:layout_alignEnd="@+id/numModF"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="FOR"
+                android:id="@+id/textFOR"
+                android:layout_marginTop="10dp"
+                android:textSize="32sp"
+                android:layout_below="@+id/textHab"
+                android:layout_alignParentStart="true"
+                android:paddingTop="6dp" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnFLeft"
+                android:src="@mipmap/ic_left"
+                android:layout_alignTop="@+id/textFOR"
+                android:layout_toEndOf="@+id/textFOR"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/left" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numFOR"
+                android:layout_alignBottom="@+id/textFOR"
+                android:layout_toEndOf="@+id/btnFLeft"
+                android:layout_alignTop="@+id/btnFLeft"
+                android:layout_marginTop="5dp"
+                android:textSize="32sp"
+                android:paddingLeft="7dp" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnFRight"
+                android:src="@mipmap/ic_right"
+                android:layout_alignTop="@+id/btnFLeft"
+                android:layout_toEndOf="@+id/numFOR"
+                android:contentDescription="@string/right" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModF"
+                android:layout_alignBottom="@+id/numFOR"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/numFOR"
+                android:textSize="32sp"
+                android:paddingLeft="7dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="DES"
+                android:id="@+id/textDES"
+                android:textSize="32sp"
+                android:paddingTop="6dp"
+                android:layout_below="@+id/btnFLeft"
+                android:layout_alignParentStart="true" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnDLeft"
+                android:src="@mipmap/ic_left"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/left"
+                android:layout_alignTop="@+id/textDES"
+                android:layout_toEndOf="@+id/textDES" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numDES"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignBottom="@+id/textDES"
+                android:layout_toEndOf="@+id/btnDLeft" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnDRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnFRight"
+                android:layout_alignStart="@+id/btnFRight" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModD"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignTop="@+id/numDES"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="COS"
+                android:id="@+id/textCOS"
+                android:textSize="32sp"
+                android:paddingTop="6dp"
+                android:layout_below="@+id/btnDLeft"
+                android:layout_alignParentStart="true" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnCoLeft"
+                android:src="@mipmap/ic_left"
+                android:layout_marginLeft="20dp"
+                android:contentDescription="@string/left"
+                android:layout_below="@+id/btnDLeft"
+                android:layout_toStartOf="@+id/numFOR" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numCOS"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignBottom="@+id/textCOS"
+                android:layout_toStartOf="@+id/btnDRight" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnCoRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnDRight"
+                android:layout_toEndOf="@+id/numCOS" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModCo"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignTop="@+id/numCOS"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="INT"
+                android:id="@+id/textINT"
+                android:textSize="32sp"
+                android:paddingTop="6dp"
+                android:layout_alignTop="@+id/btnILeft"
+                android:layout_alignEnd="@+id/textDES" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnILeft"
+                android:src="@mipmap/ic_left"
+                android:layout_marginLeft="20dp"
+                android:contentDescription="@string/left"
+                android:layout_below="@+id/btnCoLeft"
+                android:layout_toStartOf="@+id/numCOS" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numINT"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignBottom="@+id/textINT"
+                android:layout_alignStart="@+id/numCOS" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnIRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnCoRight"
+                android:layout_toEndOf="@+id/numINT" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModI"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignTop="@+id/numINT"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="SAB"
+                android:id="@+id/textSAB"
+                android:textSize="32sp"
+                android:paddingTop="6dp"
+                android:layout_below="@+id/btnILeft"
+                android:layout_alignParentStart="true" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnSLeft"
+                android:src="@mipmap/ic_left"
+                android:layout_marginLeft="20dp"
+                android:contentDescription="@string/left"
+                android:layout_below="@+id/btnILeft"
+                android:layout_toStartOf="@+id/numINT" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numSAB"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignBottom="@+id/textSAB"
+                android:layout_alignStart="@+id/numINT" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnSRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnIRight"
+                android:layout_toEndOf="@+id/numSAB" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModS"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignTop="@+id/numSAB"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="CAR"
+                android:id="@+id/textCAR"
+                android:textSize="32sp"
+                android:paddingTop="6dp"
+                android:layout_below="@+id/btnSLeft"
+                android:layout_alignEnd="@+id/textCOS" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnCaLeft"
+                android:src="@mipmap/ic_left"
+                android:layout_marginLeft="20dp"
+                android:contentDescription="@string/left"
+                android:layout_alignTop="@+id/textCAR"
+                android:layout_toStartOf="@+id/numSAB" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numCAR"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignBottom="@+id/textCAR"
+                android:layout_alignStart="@+id/numSAB" />
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnCaRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnSRight"
+                android:layout_toEndOf="@+id/numCAR" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModCa"
+                android:textSize="32sp"
+                android:paddingLeft="7dp"
+                android:layout_alignTop="@+id/numCAR"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:text="Adicionar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAdd"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="@android:color/background_light"
+                android:layout_below="@+id/btnCaLeft"
+                android:layout_alignStart="@+id/textCAR"
+                android:layout_marginTop="14dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
 </RelativeLayout>

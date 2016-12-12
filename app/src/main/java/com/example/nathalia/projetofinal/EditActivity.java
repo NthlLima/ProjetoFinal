@@ -15,8 +15,7 @@ import java.util.ArrayList;
 
 public class EditActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText editNome;
-    private Spinner editClasse;
-    private ArrayAdapter<String> adpClasse, adpRaca;
+    private Spinner editClasse, editRaca;
     private FloatingActionButton fabSalvar;
     private Controller ctrl;
     private String nome;
@@ -33,14 +32,11 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
 
         editNome = (EditText)findViewById(R.id.editNome);
         editClasse = (Spinner) findViewById(R.id.editClasse);
-        adpClasse = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item);
-        adpClasse.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        adpClasse.add("Guerreiro");
-        adpClasse.add("Bárbaro");
-        adpClasse.add("Mago");
-        adpClasse.add("Ranger");
-        editClasse.setAdapter(adpClasse);
-        //editRaca = (EditText)findViewById(R.id.editRaca);
+        editClasse.setAdapter(ctrl.setClasses(this));
+        editRaca = (Spinner)findViewById(R.id.editRaca);
+        editRaca.setAdapter(ctrl.setRacas(this));
+
+
         fabSalvar = (FloatingActionButton)findViewById(R.id.fabSalvar);
         fabSalvar.setOnClickListener(this);
 
@@ -51,9 +47,10 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
             if(b != null){
                 nome = b.getString("nome");
                 editNome.setText(nome);
-                //editClasse.setSelection(b.getString("classe"));
-                //editRaca.setText(b.getString("raca"));
-
+                //int c = setClasse(b.getString("classe"));
+                editClasse.setSelection(b.getInt("posclasse"));
+                //int r = setRaca(b.getString("raca"));
+                editRaca.setSelection(b.getInt("posraca"));
             }
         }
 
@@ -63,12 +60,14 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v == fabSalvar){
             ArrayList<String> dados = new ArrayList<>();
+            ArrayList<Integer> posicoes = new ArrayList<>();
             dados.add(editNome.getText().toString());
-            //dados.add(spnClasse.getSelectedItem().toString());
-            //dados.add(spnRaca.getSelectedItem().toString());
+            dados.add(editClasse.getSelectedItem().toString());
+            dados.add(editRaca.getSelectedItem().toString());
+            posicoes.add(editClasse.getSelectedItemPosition());
+            posicoes.add(editRaca.getSelectedItemPosition());
 
-
-            ctrl.editPerson(nome, dados);
+            ctrl.editPerson(nome, dados, posicoes);
             Bundle b = new Bundle();
             Intent it = new Intent(this,exibirActivity.class);
             it.putExtras(b);
@@ -77,7 +76,6 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
             finish();
         }
     }
-
 
 
 }

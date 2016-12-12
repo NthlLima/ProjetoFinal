@@ -10,65 +10,363 @@
     tools:showIn="@layout/activity_exibir"
     android:background="@color/colorPrimary">
 
-    <ImageView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/imgHeader"
-        android:layout_width="150sp"
-        android:layout_height="150sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:id="@+id/nomePerson"
-        android:textSize="20sp"
-        android:textColor="@color/colorAccent"
-        android:layout_alignBottom="@+id/imgHeader"
-        android:layout_centerHorizontal="true"
-        android:textStyle="normal|bold" />
+            <ImageView
 
-    <TextView
-        android:text="Classe:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgHeader"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="24dp"
-        android:id="@+id/textClasse"
-        android:textColor="@color/colorAccent"
-        android:textSize="16sp" />
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/imgHeader"
+                android:layout_width="150sp"
+                android:layout_height="150sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textClasse"
-        android:layout_toEndOf="@+id/textClasse"
-        android:id="@+id/classePerson"
-        android:textColor="@color/colorAccent"
-        android:paddingLeft="5sp"
-        android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:id="@+id/nomePerson"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                android:layout_alignBottom="@+id/imgHeader"
+                android:layout_centerHorizontal="true"
+                android:textStyle="normal|bold" />
 
-    <TextView
-        android:text="Raça:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textClasse"
-        android:layout_alignStart="@+id/textClasse"
-        android:id="@+id/textRaca"
-        android:textSize="16sp"
-        android:textColor="@color/colorAccent"
-        android:paddingTop="10sp" />
+            <TextView
+                android:text="Classe:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgHeader"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="24dp"
+                android:id="@+id/textClasse"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textRaca"
-        android:layout_toEndOf="@+id/textRaca"
-        android:id="@+id/racaPerson"
-        android:textSize="16sp"
-        android:textColor="@color/colorAccent"
-        android:paddingLeft="5sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textClasse"
+                android:layout_toEndOf="@+id/textClasse"
+                android:id="@+id/classePerson"
+                android:textColor="@color/colorAccent"
+                android:paddingLeft="5sp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="Raça:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textClasse"
+                android:layout_alignStart="@+id/textClasse"
+                android:id="@+id/textRaca"
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"
+                android:paddingTop="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textRaca"
+                android:layout_toEndOf="@+id/textRaca"
+                android:id="@+id/racaPerson"
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"
+                android:paddingLeft="5sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                app:srcCompat="@drawable/habilidades"
+                android:id="@+id/imgHab"
+                android:layout_below="@+id/racaPerson"
+                android:layout_toEndOf="@+id/classePerson"
+                android:layout_marginTop="20dp" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="260dp"
+                android:layout_marginLeft="16sp">
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/forpocao"
+                    android:id="@+id/pocaoRed"
+                    android:layout_below="@+id/imgHab"
+                    android:layout_toStartOf="@+id/racaPerson"
+                    android:layout_marginTop="12dp" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/forca"
+                    android:id="@+id/imgFOR"
+                    android:layout_above="@+id/imgDES"
+                    android:layout_toEndOf="@+id/racaPerson"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/forPerson"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_alignBottom="@+id/imgFOR"
+                    android:layout_toEndOf="@+id/imgFOR"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:paddingTop="25sp"
+                    android:layout_height="50sp" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:layout_height="25sp"
+                    android:id="@+id/modforca"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_alignBaseline="@+id/forPerson"
+                    android:layout_alignBottom="@+id/forPerson"
+                    android:layout_toEndOf="@+id/nomePerson"
+                    android:text="00"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/despocao"
+                    android:layout_below="@+id/pocaoRed"
+                    android:layout_alignStart="@+id/pocaoRed"
+                    android:id="@+id/pocaoBlue"
+                    android:layout_row="1"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/des"
+                    android:id="@+id/imgDES"
+                    android:layout_below="@+id/pocaoRed"
+                    android:layout_toEndOf="@+id/pocaoRed"
+                    android:layout_row="1"
+                    android:layout_column="1" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/desPerson"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_alignBottom="@+id/imgDES"
+                    android:layout_alignStart="@+id/forPerson"
+                    android:text="00"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:textAlignment="center"
+                    android:paddingTop="15sp" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/cospocao"
+                    android:layout_below="@+id/pocaoBlue"
+                    android:layout_alignStart="@+id/pocaoBlue"
+                    android:id="@+id/pocaoGreen"
+                    android:layout_row="2"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/cos"
+                    android:layout_below="@+id/pocaoBlue"
+                    android:layout_toEndOf="@+id/pocaoBlue"
+                    android:id="@+id/imgCOS"
+                    android:layout_row="2"
+                    android:layout_column="1" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/intpocao"
+                    android:id="@+id/pocaoPurple"
+                    android:layout_below="@+id/pocaoGreen"
+                    android:layout_alignStart="@+id/pocaoGreen"
+                    android:layout_row="3"
+                    android:layout_column="0" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/cosPerson"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_above="@+id/imgINT"
+                    android:layout_alignStart="@+id/desPerson"
+                    android:text="00"
+                    android:layout_row="2"
+                    android:layout_column="2"
+                    android:paddingTop="15dp"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/modcos"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_alignBaseline="@+id/cosPerson"
+                    android:layout_alignBottom="@+id/cosPerson"
+                    android:layout_alignStart="@+id/moddes"
+                    android:text="00"
+                    android:layout_row="2"
+                    android:layout_column="3"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/inte"
+                    android:id="@+id/imgINT"
+                    android:layout_alignTop="@+id/nomePerson"
+                    android:layout_toEndOf="@+id/modsab"
+                    android:layout_marginTop="7dp"
+                    android:layout_row="3"
+                    android:layout_column="1" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/intPerson"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_below="@+id/cosPerson"
+                    android:layout_toEndOf="@+id/cosPerson"
+                    android:text="00"
+                    android:layout_row="3"
+                    android:layout_column="2"
+                    android:textAlignment="center"
+                    android:paddingTop="15sp" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/modint"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_alignBaseline="@+id/intPerson"
+                    android:layout_alignBottom="@+id/intPerson"
+                    android:layout_alignStart="@+id/modcos"
+                    tools:text="00"
+                    android:layout_row="3"
+                    android:layout_column="3"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/sabpocao"
+                    android:id="@+id/pocaoOrange"
+                    android:layout_below="@+id/pocaoPurple"
+                    android:layout_alignStart="@+id/pocaoPurple"
+                    android:layout_row="4"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/sab"
+                    android:id="@+id/imgSAB"
+                    android:layout_below="@+id/imgINT"
+                    android:layout_toEndOf="@+id/pocaoPink"
+                    android:layout_row="4"
+                    android:layout_column="1" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/sabPerson"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_below="@+id/imgINT"
+                    android:layout_toEndOf="@+id/intPerson"
+                    android:text="00"
+                    android:layout_row="4"
+                    android:layout_column="2"
+                    android:textAlignment="center"
+                    android:paddingTop="15sp" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/modsab"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_alignBaseline="@+id/sabPerson"
+                    android:layout_alignBottom="@+id/sabPerson"
+                    android:layout_alignStart="@+id/modint"
+                    android:text="00"
+                    android:layout_row="4"
+                    android:layout_column="3"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/carpocao"
+                    android:id="@+id/pocaoPink"
+                    android:layout_below="@+id/pocaoOrange"
+                    android:layout_alignStart="@+id/pocaoOrange"
+                    android:layout_row="5"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/car"
+                    android:id="@+id/imgCAR"
+                    android:layout_alignTop="@+id/pocaoPink"
+                    android:layout_toEndOf="@+id/pocaoPink"
+                    android:layout_row="5"
+                    android:layout_column="1" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/carPerson"
+                    android:layout_below="@+id/pocaoOrange"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_toEndOf="@+id/sabPerson"
+                    android:text="00"
+                    android:layout_row="5"
+                    android:layout_column="2"
+                    android:textAlignment="center"
+                    android:paddingTop="15sp" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:layout_alignTop="@+id/carPerson"
+                    android:layout_toEndOf="@+id/modsab"
+                    android:id="@+id/modcar"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:text="00"
+                    android:layout_row="5"
+                    android:layout_column="3"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="50sp"
+                    android:id="@+id/moddes"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_alignBaseline="@+id/desPerson"
+                    android:layout_alignBottom="@+id/desPerson"
+                    android:layout_alignStart="@+id/modforca"
+                    android:text="00"
+                    android:layout_row="1"
+                    android:layout_column="3"
+                    android:textAlignment="center" />
+            </GridLayout>
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
