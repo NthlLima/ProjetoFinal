@@ -56,8 +56,8 @@ public class Controller {
         return inteiros;
     }
 
-    public  void editPerson (String nome,ArrayList<String> newdados, ArrayList<Integer> newpos ){
-        dbAdp.editPerson(nome,newdados,newpos);
+    public  void editPerson (String nome,ArrayList<String> newdados, ArrayList<Integer> newint ){
+        dbAdp.editPerson(nome,newdados,newint);
     }
 
     public void excluirPerson (String nome){

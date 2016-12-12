@@ -139,6 +139,9 @@ public class exibirActivity extends AppCompatActivity implements View.OnClickLis
                 sabPerson.setText(""+inteiros.get(6));
                 modsab.setText(""+setMod(inteiros.get(6)));
 
+                carPerson.setText(""+inteiros.get(7));
+                modcar.setText(""+setMod(inteiros.get(7)));
+
                 nome = dados.get(0);
                 h = (inteiros.get(0));
                 i = ctrl.imgHeader(h);
@@ -163,6 +166,12 @@ public class exibirActivity extends AppCompatActivity implements View.OnClickLis
             it.putExtra("raca", dados.get(2));
             it.putExtra("posclasse", inteiros.get(0));
             it.putExtra("posraca", inteiros.get(1));
+            it.putExtra("forca", inteiros.get(2));
+            it.putExtra("des", inteiros.get(3));
+            it.putExtra("cos", inteiros.get(4));
+            it.putExtra("inte", inteiros.get(5));
+            it.putExtra("sab", inteiros.get(6));
+            it.putExtra("car", inteiros.get(7));
             finish();
             startActivityForResult(it,0);
         }

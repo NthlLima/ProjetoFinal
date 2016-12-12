@@ -79,15 +79,6 @@
                 android:textColor="@color/colorAccent"
                 android:paddingLeft="5sp" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="50sp"
-                app:srcCompat="@drawable/habilidades"
-                android:id="@+id/imgHab"
-                android:layout_below="@+id/racaPerson"
-                android:layout_toEndOf="@+id/classePerson"
-                android:layout_marginTop="20dp" />
-
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -366,6 +357,15 @@
                     android:layout_column="3"
                     android:textAlignment="center" />
             </GridLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                app:srcCompat="@drawable/habilidades"
+                android:id="@+id/imgHab"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/textRaca"
+                android:layout_alignStart="@+id/textRaca" />
         </RelativeLayout>
     </ScrollView>
 

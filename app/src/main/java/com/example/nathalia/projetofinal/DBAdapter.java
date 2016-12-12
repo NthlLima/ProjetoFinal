@@ -48,16 +48,23 @@ public class DBAdapter {
     }
 
 
-    public  void editPerson(String nome, ArrayList<String> newdados, ArrayList<Integer> newpos){
+    public  void editPerson(String nome, ArrayList<String> newdados, ArrayList<Integer> newint){
         ContentValues data = new ContentValues();
         Personagem p = this.loadPerson(nome);
         if(p.getId() != 0) {
             // ArrayList
             p.setNome(newdados.get(0));
             p.setClasse(newdados.get(1));
-            p.setPosClasse(newpos.get(0));
+            p.setPosClasse(newint.get(0));
             p.setRaca(newdados.get(2));
-            p.setPosRaca(newpos.get(1));
+            p.setPosRaca(newint.get(1));
+            p.setForc(newint.get(2));
+            p.setDes(newint.get(3));
+            p.setCos(newint.get(4));
+            p.setInte(newint.get(5));
+            p.setSab(newint.get(6));
+            p.setCar(newint.get(7));
+
 
             //Data
             data.put("nome", p.getNome());
@@ -65,6 +72,12 @@ public class DBAdapter {
             data.put("posclasse", p.getPosClasse());
             data.put("raca", p.getRaca());
             data.put("posraca", p.getPosRaca());
+            data.put("forca", p.getForc());
+            data.put("des", p.getDes());
+            data.put("cos", p.getCos());
+            data.put("inte", p.getInte());
+            data.put("sab", p.getSab());
+            data.put("car", p.getCar());
             long id = p.getId();
             String _id = String.valueOf(id);
             db.update("Personagens", data, "_id=?", new String[]{_id});

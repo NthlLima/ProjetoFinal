@@ -10,67 +10,557 @@
     tools:showIn="@layout/activity_edit"
     android:background="@color/colorPrimary">
 
-    <ImageView
-
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/imgHeader"
-        android:layout_width="150sp"
-        android:layout_height="150sp"
-        app:srcCompat="@drawable/headeno" />
-
-    <TextView
-        android:text="Classe:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgHeader"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="24dp"
-        android:id="@+id/textClasse"
-        android:textColor="@color/colorAccent"
-        android:textSize="16sp" />
-
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editNome"
-        android:textSize="20sp"
-        android:textColor="?android:attr/colorControlActivated"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="135sp"
-        android:layout_marginTop="55sp" />
+        android:layout_height="match_parent">
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textClasse"
-        android:layout_alignStart="@+id/textClasse"
-        android:id="@+id/editClasse"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="16sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:text="Raça:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textRaca"
-        android:textSize="16sp"
-        android:textColor="@color/colorAccent"
-        android:paddingTop="10sp"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/editClasse"
-        android:layout_alignStart="@+id/editClasse" />
+            <ImageView
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/textRaca"
-        android:id="@+id/editRaca"
-        android:layout_marginRight="16sp" />
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/imgHeader"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                app:srcCompat="@drawable/headeno" />
+
+            <TextView
+                android:text="Classe:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgHeader"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="24dp"
+                android:id="@+id/textClasse"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editNome"
+                android:textSize="20sp"
+                android:textColor="?android:attr/colorControlActivated"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="135sp"
+                android:layout_marginTop="55sp" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textClasse"
+                android:layout_alignStart="@+id/textClasse"
+                android:id="@+id/editClasse"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16sp" />
+
+            <TextView
+                android:text="Raça:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textRaca"
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"
+                android:paddingTop="10sp"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/editClasse"
+                android:layout_alignStart="@+id/editClasse" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editRaca"
+                android:layout_marginRight="16sp"
+                android:layout_below="@+id/textRaca"
+                android:layout_alignStart="@+id/textRaca" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="320dp">
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnFLeft"
+                android:src="@mipmap/ic_left"
+                android:layout_alignTop="@+id/textFOR"
+                android:layout_toEndOf="@+id/textFOR"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/left"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:backgroundTint="@color/colorAccent"
+                    android:tint="#FFF" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnFRight"
+                android:src="@mipmap/ic_right"
+                android:layout_alignTop="@+id/btnFLeft"
+                android:layout_toEndOf="@+id/numFOR"
+                android:contentDescription="@string/right"
+                    android:layout_row="1"
+                    android:layout_column="4"
+                    android:tint="#FFF"
+                    android:backgroundTint="@color/colorAccent" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModF"
+                android:layout_alignBottom="@+id/numFOR"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/numFOR"
+                android:textSize="32sp"
+                    android:layout_row="1"
+                    android:layout_column="5"
+                    android:text="00"
+                    android:textColor="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:paddingTop="5sp" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnDLeft"
+                android:src="@mipmap/ic_left"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/left"
+                android:layout_alignTop="@+id/textDES"
+                android:layout_toEndOf="@+id/textDES"
+                    android:layout_row="2"
+                    android:layout_column="2"
+                    android:backgroundTint="@color/colorAccent"
+                    android:tint="#FFFFFF" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numDES"
+                android:textSize="32sp"
+                    android:layout_alignBottom="@+id/textDES"
+                android:layout_toEndOf="@+id/btnDLeft"
+                    android:layout_row="2"
+                    android:layout_column="3"
+                    android:textColor="@android:color/background_light"
+                    android:text="00"
+                    android:paddingTop="5sp"
+                    android:textAlignment="center" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnDRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnFRight"
+                android:layout_alignStart="@+id/btnFRight"
+                    android:layout_row="2"
+                    android:layout_column="4"
+                    android:backgroundTint="@color/colorAccent"
+                    android:tint="#FFFFFF" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnCoLeft"
+                android:src="@mipmap/ic_left"
+                    android:contentDescription="@string/left"
+                android:layout_below="@+id/btnDLeft"
+                android:layout_toStartOf="@+id/numFOR"
+                    android:layout_row="3"
+                    android:layout_column="2"
+                    android:tint="#FFFFFF"
+                    android:backgroundTint="@color/colorAccent"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numCOS"
+                android:textSize="32sp"
+                    android:layout_alignBottom="@+id/textCOS"
+                android:layout_toStartOf="@+id/btnDRight"
+                    android:layout_row="3"
+                    android:layout_column="3"
+                    android:text="00"
+                    android:textColor="@android:color/background_light"
+                    android:paddingTop="5sp"
+                    android:textAlignment="center" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnCoRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnDRight"
+                android:layout_toEndOf="@+id/numCOS"
+                    android:layout_row="3"
+                    android:layout_column="4"
+                    android:tint="#FFFFFF"
+                    android:backgroundTint="@color/colorAccent" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModCo"
+                android:textSize="32sp"
+                    android:layout_alignTop="@+id/numCOS"
+                android:layout_alignParentEnd="true"
+                    android:layout_row="3"
+                    android:layout_column="5"
+                    android:text="00"
+                    android:textColor="@color/colorAccent"
+                    android:textAlignment="center" />
+
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="INT"
+                android:id="@+id/textINT"
+                android:textSize="32sp"
+                android:paddingTop="6dp"
+                android:layout_alignTop="@+id/btnILeft"
+                android:layout_alignEnd="@+id/textDES"
+                    android:layout_row="4"
+                    android:layout_column="1"
+                    android:textColor="@android:color/transparent" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnILeft"
+                android:src="@mipmap/ic_left"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/left"
+                android:layout_below="@+id/btnCoLeft"
+                android:layout_toStartOf="@+id/numCOS"
+                    android:tint="#FFFFFF"
+                    android:backgroundTint="@color/colorAccent" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numINT"
+                android:textSize="32sp"
+                    android:layout_alignBottom="@+id/textINT"
+                android:layout_alignStart="@+id/numCOS"
+                    android:text="00"
+                    android:textColor="@android:color/background_light"
+                    android:textAlignment="center" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnIRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnCoRight"
+                android:layout_toEndOf="@+id/numINT"
+                    android:layout_row="4"
+                    android:layout_column="4"
+                    android:tint="#FFFFFF"
+                    android:backgroundTint="@color/colorAccent" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModI"
+                android:textSize="32sp"
+                    android:layout_alignTop="@+id/numINT"
+                android:layout_alignParentEnd="true"
+                    android:layout_row="4"
+                    android:layout_column="5"
+                    android:text="00"
+                    android:textColor="@color/colorAccent"
+                    android:textAlignment="center" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnSLeft"
+                android:src="@mipmap/ic_left"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/left"
+                android:layout_below="@+id/btnILeft"
+                android:layout_toStartOf="@+id/numINT"
+                    android:layout_row="5"
+                    android:layout_column="2"
+                    android:tint="#FFFFFF"
+                    android:backgroundTint="@color/colorAccent" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numSAB"
+                android:textSize="32sp"
+                    android:layout_alignBottom="@+id/textSAB"
+                android:layout_alignStart="@+id/numINT"
+                    android:layout_row="5"
+                    android:layout_column="3"
+                    android:paddingTop="5sp"
+                    android:text="00"
+                    android:textColor="@android:color/background_light"
+                    android:textAlignment="center" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnSRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnIRight"
+                android:layout_toEndOf="@+id/numSAB"
+                    android:layout_row="5"
+                    android:layout_column="4"
+                    android:tint="#FFFFFF"
+                    android:backgroundTint="@color/colorAccent" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModS"
+                android:textSize="32sp"
+                    android:layout_alignTop="@+id/numSAB"
+                android:layout_alignParentEnd="true"
+                    android:layout_row="5"
+                    android:layout_column="5"
+                    android:text="00"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnCaLeft"
+                android:src="@mipmap/ic_left"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/left"
+                android:layout_alignTop="@+id/textCAR"
+                android:layout_toStartOf="@+id/numSAB"
+                    android:layout_row="6"
+                    android:layout_column="2"
+                    android:tint="#FFFFFF"
+                    android:backgroundTint="@color/colorAccent" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numCAR"
+                android:textSize="32sp"
+                    android:layout_alignBottom="@+id/textCAR"
+                android:layout_alignStart="@+id/numSAB"
+                    android:layout_row="6"
+                    android:layout_column="3"
+                    android:textAlignment="center"
+                    android:text="00"
+                    android:textColor="@android:color/background_light"
+                    android:paddingTop="5sp" />
+
+                <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnCaRight"
+                android:src="@mipmap/ic_right"
+                android:contentDescription="@string/right"
+                android:layout_below="@+id/btnSRight"
+                android:layout_toEndOf="@+id/numCAR"
+                    android:layout_row="6"
+                    android:layout_column="4"
+                    android:tint="#FFFFFF"
+                    android:backgroundTint="@color/colorAccent" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/forpocao"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/pcaoRed"
+                    android:layout_row="1"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/forca"
+                    android:id="@+id/imgFOR" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numFOR"
+                android:layout_alignBottom="@+id/textFOR"
+                android:layout_toEndOf="@+id/btnFLeft"
+                android:layout_alignTop="@+id/btnFLeft"
+                android:layout_marginTop="5dp"
+                android:textSize="32sp"
+                    android:layout_row="1"
+                    android:layout_column="3"
+                    android:text="00"
+                    android:textColor="#fff"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/despocao"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/pcaoBlue"
+                    android:layout_row="2"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/des"
+                    android:id="@+id/imgDES" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModD"
+                android:textSize="32sp"
+                    android:layout_alignTop="@+id/numDES"
+                android:layout_alignParentEnd="true"
+                    android:layout_row="2"
+                    android:layout_column="5"
+                    android:text="00"
+                    android:textColor="@color/colorAccent"
+                    android:textAlignment="center" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/cospocao"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/pcaoGreen"
+                    android:layout_row="3"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/cos"
+                    android:id="@+id/imgCOS" />
+
+                <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numModCa"
+                android:textSize="32sp"
+                    android:layout_alignTop="@+id/numCAR"
+                android:layout_alignParentEnd="true"
+                    android:text="00"
+                    android:layout_row="6"
+                    android:layout_column="5"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/sabpocao"
+                    android:id="@+id/pcaoOrange"
+                    android:layout_row="5"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/sab"
+                    android:id="@+id/imgSAB" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/intpocao"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/pcaoPurple"
+                    android:layout_row="4"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/inte"
+                    android:id="@+id/imgINT" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/carpocao"
+                    android:layout_row="6"
+                    android:layout_column="0" />
+
+                <ImageView
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    app:srcCompat="@drawable/car" />
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Mod.Habilidade"
+                android:id="@+id/textMod"
+                android:textSize="10sp"
+                android:layout_below="@+id/numTotalM"
+                android:layout_alignEnd="@+id/numTotalM"
+                android:textColor="@color/colorAccent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/habilidades"
+                android:id="@+id/imageView23"
+                android:layout_below="@+id/editRaca"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/numTotalM"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:paddingLeft="5dp"
+                android:text="00"
+                android:textColor="@android:color/background_light"
+                android:layout_below="@+id/editRaca"
+                android:layout_alignEnd="@+id/editRaca" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
