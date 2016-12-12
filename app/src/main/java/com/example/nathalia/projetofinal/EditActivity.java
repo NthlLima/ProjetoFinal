@@ -19,12 +19,13 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
     private Controller ctrl;
     private String nome;
     // Tabela de Habilidades
+    private ImageView imgMod;
     private ImageButton btnFLeft, btnDLeft, btnCoLeft, btnILeft, btnSLeft, btnCaLeft ;
     private ImageButton btnFRight, btnDRight, btnCoRight, btnIRight, btnSRight, btnCaRight;
     private TextView numFOR, numDES, numCOS, numINT, numSAB, numCAR;
     private TextView numTotalM, numModF, numModD, numModCo, numModI, numModS, numModCa;
 
-    private int modTotal=15, numF=10, numD=10, numCo=10, numI=10, numS=10, numCa=10;
+    private int modTotal, numF, numD, numCo, numI, numS, numCa;
     private int modF, modD, modCo, modI, modS, modCa;
 
 
@@ -49,6 +50,8 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         fabSalvar.setOnClickListener(this);
 
         //Tabela de Habilidades
+        imgMod = (ImageView)findViewById(R.id.imgMod);
+
         //Botões
         btnFLeft = (ImageButton)findViewById(R.id.btnFLeft);
         btnFRight = (ImageButton)findViewById(R.id.btnFRight);
@@ -113,19 +116,22 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                 // Set Texto
                 numTotalM.setText("0");
                 numFOR.setText(""+numF);
-                numModF.setText("0"+setMod(numF));
+                numModF.setText(""+setMod(numF));
                 numDES.setText(""+numD);
-                numModD.setText("0"+setMod(numD));
+                numModD.setText(""+setMod(numD));
                 numCOS.setText(""+numCo);
-                numModCo.setText("0"+setMod(numCo));
+                numModCo.setText(""+setMod(numCo));
                 numINT.setText(""+numI);
-                numModI.setText("0"+setMod(numI));
+                numModI.setText(""+setMod(numI));
                 numSAB.setText(""+numS);
-                numModS.setText("0"+setMod(numS));
+                numModS.setText(""+setMod(numS));
                 numCAR.setText(""+numCa);
-                numModCa.setText("0"+setMod(numCa));
+                numModCa.setText(""+setMod(numCa));
+                modTotal = 0;
+                imgMod.setImageResource(setPocao[0]);
             }
         }
+
 
 
     }
@@ -192,6 +198,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                         numModF.setText("+" + modF);
                     }
                 }
+                setimgPocao(modTotal);
             } else if (v == btnFRight && modTotal > 0 && numF < 18) {
                 numF = numF + 1;
                 modF = (numF - 10) / 2;
@@ -204,6 +211,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                     numFOR.setText("" + numF);
                     numModF.setText("+" + modF);
                 }
+                setimgPocao(modTotal);
             }
         }
 
@@ -226,6 +234,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                         numModD.setText("+" + modD);
                     }
                 }
+                setimgPocao(modTotal);
             } else if (v == btnDRight && modTotal > 0 && numD < 18) {
                 numD = numD + 1;
                 modD = (numD - 10) / 2;
@@ -238,6 +247,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                     numDES.setText("" + numD);
                     numModD.setText("+" + modD);
                 }
+                setimgPocao(modTotal);
             }
 
         }
@@ -260,6 +270,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                         numModCo.setText("+" + modCo);
                     }
                 }
+                setimgPocao(modTotal);
             } else if (v == btnCoRight && modTotal > 0 && numCo < 18) {
                 numCo = numCo + 1;
                 modCo = (numCo - 10) / 2;
@@ -272,6 +283,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                     numCOS.setText("" + numCo);
                     numModCo.setText("+" + modCo);
                 }
+                setimgPocao(modTotal);
             }
 
         }
@@ -294,6 +306,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                         numModI.setText("+" + modI);
                     }
                 }
+                setimgPocao(modTotal);
             } else if (v == btnIRight && modTotal > 0 && numI < 18) {
                 numI = numI + 1;
                 modI = (numI - 10) / 2;
@@ -306,6 +319,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                     numINT.setText("" + numI);
                     numModI.setText("+" + modI);
                 }
+                setimgPocao(modTotal);
             }
 
         }
@@ -328,6 +342,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                         numModS.setText("+" + modS);
                     }
                 }
+                setimgPocao(modTotal);
             } else if (v == btnSRight && modTotal > 0 && numS < 18) {
                 numS = numS + 1;
                 modS = (numS - 10) / 2;
@@ -340,6 +355,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                     numSAB.setText("" + numS);
                     numModS.setText("+" + modS);
                 }
+                setimgPocao(modTotal);
             }
 
         }
@@ -363,6 +379,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                         numModCa.setText("+" + modCa);
                     }
                 }
+                setimgPocao(modTotal);
             } else if (v == btnCaRight && modTotal > 0 && numCa < 18) {
                 numCa = numCa + 1;
                 modCa = (numCa - 10) / 2;
@@ -375,6 +392,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
                     numCAR.setText("" + numCa);
                     numModCa.setText("+" + modCa);
                 }
+                setimgPocao(modTotal);
             }
         }
 
@@ -399,5 +417,22 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
 
         ctrl.editPerson(nome, dados, dadosint);
     }
+
+    private void setimgPocao(int modT){
+        if(modT == 0){
+            imgMod.setImageResource(setPocao[0]);
+        } else if(modT > 0 && modT < 9){
+            imgMod.setImageResource(setPocao[1]);
+        } else if(modT > 9){
+            imgMod.setImageResource(setPocao[2]);
+        }
+    }
+
+    private int[] setPocao = new int[]{
+            R.drawable.pocaempty,
+            R.drawable.pocaohalf,
+            R.drawable.pocaofull
+
+    };
 
 }
